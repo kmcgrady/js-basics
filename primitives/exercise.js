@@ -115,18 +115,59 @@ function toSentence(word1, word2, word3, oxfordComma) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
 function toRoman(arabic) {
-  switch (arabic) {
-    case 'Less than one':
-      arabic > 1;
-      break;
-    case 'Greater than 10':
-      arabic > 10;
-      break;
-    default:
-      
-      break;
-  } return null
+    switch (arabic) {
+      case arabic < 1:
+        null;
+        break;
+      case 1:
+        "I";
+        break;
+      case 3:
+        arabic = "II";
+        break;
+      case 4:
+        arabic = "III";
+        break;
+      case 5:
+        arabic = "IV";
+        break;
+      case 6:
+        arabic = "V";
+        break;
+      case 7:
+        arabic = "VI";
+        break;
+      case 8:
+        arabic = "VII";
+        break;
+      case 9:
+        arabic = "VIII";
+        break;
+      case 10:
+        arabic = "IX";
+        break;
+      case 11:
+        arabic = "X";
+        break;
+      case 12:
+        arabic > 10 === null;
+        break;
+      default:
+        null;
+  }
 }
+//   switch (arabic) {
+//     case 'Less than one':
+//       arabic > 1;
+//       break;
+//     case 'Greater than 10':
+//       arabic > 10;
+//       break;
+//     default:
+      
+//       break;
+//   } return null
+// }
 
 // Define a function toDolla that takes one argument
 //    amount (number)
@@ -248,14 +289,13 @@ function isOdd(integer) {
 //
 // Treat 'y' as a consonant.
 function isVowel(letter) {
-  if (letter === "a" || "e" || "i" || "o" || "u") {
+  if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
     return true
   } else {
     return false
   }
 }
 
-//indexOf "aeiou"
 
 // Define a function named largestOfThree which takes three arguments
 //    value1 (number)
@@ -356,10 +396,14 @@ function iceCreamPosition(pieTemperature, iceCreamFlavor) {
 //
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
 function isLeapYear(year) {
-  if ((year / 4) || (year / 400)) {
-    return true
-  } else {
+  if (year % 4 !== 0) {
     return false
+  } else if (year % 100 !== 0) {
+    return true
+  } else if (year % 400 !== 0) {
+    return false
+  } else {
+    return true
   }
 }
 // year % 4 !== 0 should equal to true and year % 4 === 0 should equal to false
@@ -403,7 +447,9 @@ function whisper(message) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 function stopAt(source, stop) {
-  
+  let sourceIndex = source.indexOf(stop);
+  let sourceSubstring = source.substring(0, sourceIndex);
+  return sourceSubstring.trim();
 }
 
 
@@ -415,7 +461,7 @@ function stopAt(source, stop) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 function capitalize(message) {
-  // YOUR CODE HERE
+  return (message.substring(0, 1)).toUpperCase() + message.substring(1)
 }
 
 
@@ -426,8 +472,14 @@ function capitalize(message) {
 //    Return the argument but prefixed with spaces until it's 5 characters long
 // If the argument's length is 5 or more characters
 //    Return the argument
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 function leftPad5(word) {
-  // YOUR CODE HERE
+  if (word.length < 5) {
+    return word.padStart(5, ' ') 
+  } else {
+    return word
+  }
 }
 
 
@@ -441,7 +493,11 @@ function leftPad5(word) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 function superPicky(value) {
-  // YOUR CODE HERE
+  if (typeof value === "string") {
+    return 'Thanks! Got it.'
+  } else {
+    return 'I wanted a string, but all I got was a stinking ' + typeof value
+  }
 }
 
 
@@ -454,6 +510,35 @@ function superPicky(value) {
 // If the salary is greater than 74,900
 //    Return a string that says 'Better call an accountant'
 // Otherwise
+//    Return a string for the tax percentage they are in:
+//       * single up to (and including) $9,225 => '10%'
+//       * single above $9,225 => '15%'
+//       * joint up to (and including) $18,450 => '10%'
+//       * joint above $18,450 => '15%'
+
+// function calculateTaxRate(salary, status) {
+//   if (status != 'single' === false || status != 'joint' === false) {
+//     return 'Better call an accountant' 
+//   } else if (salary > 74,900) {
+//     return 'Better call an accountant'
+//   } else {
+//     if ((status === 'single' && salary <= 9225) || (status === 'joint' && salary <= 18450)) {
+//       return '10%'
+//     } else if ((status === 'single' && salary >= 9225) || (status === 'joint' && salary >= 18450)) {
+//       return '15%'
+//     }
+//   }
+// }
+
+
 function calculateTaxRate(salary, status) {
-  // YOUR CODE HERE
+  if (salary > 74900) {
+    return 'Better call an accountant' 
+  } else if ((status === 'single' && salary <= 9225) || (status === 'joint' && salary <= 18450)) {
+    return '10%'
+  } else if ((status === 'single' && (salary >= 9225)) || (status === 'joint' && (salary >= 18450))) {
+    return '15%'
+  } else {
+    return 'Better call an accountant'
+  }
 }
