@@ -116,44 +116,32 @@ function toSentence(word1, word2, word3, oxfordComma) {
 
 function toRoman(arabic) {
     switch (arabic) {
+      case arabic = 1:
+        return 'I';
+      case arabic = 2:
+        return "II";
+      case arabic = 3:
+        return "III";
+      case arabic = 4:
+        return "IV";
+      case arabic = 5:
+        return "V";
+      case arabic = 6:
+        return "VI";
+      case arabic = 7:
+        return "VII";
+      case arabic = 8:
+        return "VIII";
+      case arabic = 9:
+        return "IX";
+      case arabic = 10:
+        return "X";
       case arabic < 1:
-        null;
-        break;
-      case 1:
-        "I";
-        break;
-      case 3:
-        arabic = "II";
-        break;
-      case 4:
-        arabic = "III";
-        break;
-      case 5:
-        arabic = "IV";
-        break;
-      case 6:
-        arabic = "V";
-        break;
-      case 7:
-        arabic = "VI";
-        break;
-      case 8:
-        arabic = "VII";
-        break;
-      case 9:
-        arabic = "VIII";
-        break;
-      case 10:
-        arabic = "IX";
-        break;
-      case 11:
-        arabic = "X";
-        break;
-      case 12:
-        arabic > 10 === null;
-        break;
+        return null;
+      case arabic > 10:
+        return null;
       default:
-        null;
+        return null;
   }
 }
 //   switch (arabic) {
