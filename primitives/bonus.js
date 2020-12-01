@@ -40,7 +40,13 @@ It'll take a few steps to solve this cipher. Have fun!
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
 function caesarShiftInt(integer) {
-  // YOUR CODE HERE
+  if (integer < 97) {
+    throw 'Error: integer too low';
+  } else if (integer > 122) {
+    throw 'Error: integer too low';
+  } else if ((integer + 13) > 122){
+    return 
+  }
 }
 
 
