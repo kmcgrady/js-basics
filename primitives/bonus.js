@@ -66,7 +66,11 @@ function caesarShiftInt(integer) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 function caesarShiftChar(char){
-  // YOUR CODE HERE
+  if (char === char) {
+    return char;
+  } else if (char !== char) {
+    return caesarShiftInt(char);
+  }
 }
 
 
@@ -78,7 +82,10 @@ function caesarShiftChar(char){
 //
 // HINT: You'll need a loop for this.
 function encodeMessage(message) {
-  // YOUR CODE HERE
+  const codeUnits = new Array(message.length);
+  for (let i = 0; i < codeUnits.length; i++) {
+    codeUnits[i] = message.charCodeAt(i);
+  }
 }
 
 
@@ -90,5 +97,5 @@ function encodeMessage(message) {
 //
 // HINT: Is there a way to use the encodeMessage() function?
 function decodeMessage(message) {
-  // YOUR CODE HERE
+  return encodeMessage.atob(message);
 }
