@@ -43,9 +43,13 @@ function caesarShiftInt(integer) {
   if (integer < 97) {
     throw 'Error: integer too low';
   } else if (integer > 122) {
-    throw 'Error: integer too low';
-  } else if ((integer + 13) > 122){
-    return 
+    throw 'Error: integer too high';
+  } else if ((integer + 13) > 122) {
+    let n = (integer + 13) - 'z'.charCodeAt();
+    newNum = n + 96
+    return newNum
+  } else {
+    return integer + 13
   }
 }
 
@@ -64,7 +68,11 @@ function caesarShiftInt(integer) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 function caesarShiftChar(char){
-  // YOUR CODE HERE
+  if (char === char.toLowerCase()) {
+    return char
+  } else {
+    return caesarShiftInt(char.charCodeAt())
+  }
 }
 
 
