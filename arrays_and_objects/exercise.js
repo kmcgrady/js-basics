@@ -4,7 +4,7 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  // YOUR CODE HERE
+  let arr = [1, 2, 3, 4]
 }
 
 
