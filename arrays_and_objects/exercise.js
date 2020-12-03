@@ -4,13 +4,7 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  const arr = [1, 2, 3, 4]
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i].length > arr.length) {
-      arr ++
-    }
-  }
-  return arr;
+
 }
 
 
@@ -20,7 +14,7 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  // YOUR CODE HERE
+
 }
 
 // Define a function named concatenate that takes in one argument.
@@ -31,13 +25,14 @@ function product(arr) {
 // array is empty, return ''.
 
 function concatenate(arr) {
-  let arr = ['my', 'name', 'is', 'ken'];
-  if (arr === '') {
+  // We could also check if the array is empty with >> (arr.length == 0)
+  if (!arr || !arr.length) {
     return '';
   } else {
     return arr.join('');
   }
 }
+
 
 // Define a function named repeat that takes in two arguments.
 //     str (string)
@@ -46,7 +41,7 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  // YOUR CODE HERE
+  
 }
 
 
