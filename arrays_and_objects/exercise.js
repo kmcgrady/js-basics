@@ -59,7 +59,7 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  // YOUR CODE HERE
+  return grades.filter((grade) => grade >= 70);
 }
 
 
