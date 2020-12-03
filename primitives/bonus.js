@@ -45,8 +45,7 @@ function caesarShiftInt(integer) {
   } else if (integer > 122) {
     throw 'Error: integer too high';
   } else if ((integer + 13) > 122) {
-    // This would also work
-    // return (integer + 13) - 123 + 97;
+    // This would also work >> return (integer + 13) - 123 + 97;
     return (integer + 13) % 123 + 97;
   } else {
     return integer + 13;
