@@ -44,8 +44,10 @@ function caesarShiftInt(integer) {
     throw 'Error: integer too low';
   } else if (integer > 122) {
     throw 'Error: integer too high';
-  } else if ((integer + 13) >= 122) {
-    return integer.fromCharCode();
+  } else if ((integer + 13) > 122) {
+    // This would also work
+    // return (integer + 13) - 123 + 97;
+    return (integer + 13) % 123 + 97;
   } else {
     return integer + 13;
   }
@@ -68,8 +70,7 @@ function caesarShiftInt(integer) {
 function caesarShiftChar(char){
   if (char === char) {
     return char;
-  } else if (char !== char) {
-    return caesarShiftInt(char);
+    
   }
 }
 
