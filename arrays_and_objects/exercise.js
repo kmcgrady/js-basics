@@ -4,7 +4,11 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  // YOUR CODE HERE
+  var sum = 0;
+  for (i = 0; i < arr.length; i++) {
+       sum += arr[i]; // add each element in an array to total
+  }
+  return sum;
 }
 
 
@@ -14,7 +18,11 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  // YOUR CODE HERE
+  var product = 1;
+  for (i = 1; i < arr.length; i++) {
+       product *= arr[i]; // add each element in an array to total
+  }
+  return product;
 }
 
 // Define a function named concatenate that takes in one argument.
@@ -24,7 +32,12 @@ function product(arr) {
 // ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
 // array is empty, return ''.
 function concatenate(arr) {
-  // YOUR CODE HERE
+  if (arr.length === 0) {
+     return '';
+  }
+  if (arr.length) {
+    return arr[0] + arr[1] + arr[2];
+  }
 }
 
 // Define a function named repeat that takes in two arguments.
