@@ -69,8 +69,8 @@ function caesarShiftInt(integer) {
 function caesarShiftChar(char){
   if (char === char) {
     return char;
-    
   }
+  
 }
 
 
