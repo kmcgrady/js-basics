@@ -49,7 +49,7 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  
+  return (`${str.repeat(times)}`);
 }
 
 
