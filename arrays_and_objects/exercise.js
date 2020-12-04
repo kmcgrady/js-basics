@@ -71,7 +71,16 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+  // Return map of new array
+  return arr.map((each) => {
+    // If the number is equal to 'from' value, return 'to' value
+    if (each === from) {
+      // return goes to next loop
+      return to;
+    }
+    // Return same value if each !== from
+    return each;
+  })
 }
 
 
