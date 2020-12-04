@@ -126,7 +126,7 @@ function min(arr) {
   if (arr.length >= 1 || arr !== undefined) {
     return(Math.min(...arr));
   } else if (arr.length <= 1 || arr !== undefined) {
-    return 'Infinity'
+    return 'Infinity';
   }
 }
 
@@ -137,7 +137,19 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  // YOUR CODE HERE
+  //Find the average of the array
+  let total = 0;
+  for(var i = 0; i < arr.length; i++) {
+      total += arr[i];
+  }
+  let avg = total / arr.length;
+
+  //Check to see if array is empty, if not return average. If empty, return null
+  if (arr.length >= 1 || arr !== undefined) {
+    return avg;
+  } else if (arr.length <= 1 || arr !== undefined) {
+    return null;
+  }
 }
 
 
