@@ -210,10 +210,10 @@ function combine(obj1, obj2) {
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
   // Convert object to array
-  let arr = Object.entries(obj);
+  let reverseObj = Object.entries(obj);
 
   // Swap out the key values in the array
-  return arr.reduce((arr, [key, value]) => ({ ...arr, [value]: key }), {});
+  return reverseObj.reduce((reverseObj, [key, value]) => ({ ...reverseObj, [value]: key }), {});
 }
 
 
