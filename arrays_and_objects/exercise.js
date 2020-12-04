@@ -220,7 +220,8 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  // YOUR CODE HERE
+  // Needs work
+  return obj.reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {});
 }
 
 
@@ -230,7 +231,7 @@ function invert(obj) {
 // Return an array of the values of the object. For example, given
 // { a: 1, b: 2, c: 3 }, then return [1, 2, 3].
 function values(obj) {
-  // YOUR CODE HERE
+  return Object.values(obj)
 }
 
 
