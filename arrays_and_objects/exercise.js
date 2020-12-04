@@ -6,7 +6,7 @@
 function sum(arr) {
   let sum = 0;
   for (let i=0; i<arr.length; i++) {
-      sum = sum + arr[i];
+    sum = sum + arr[i];
   }
   return sum;
 }
@@ -20,7 +20,7 @@ function sum(arr) {
 function product(arr) {
   let product = 1;
   for (let i=0; i<arr.length; i++){
-      product = product * arr[i];
+    product = product * arr[i];
   }
   return product;
 }
@@ -70,6 +70,7 @@ function filterPassingGrades(grades) {
 //
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
+
 function replace(arr, from, to) {
   // Return map of new array
   return arr.map((each) => {
@@ -106,7 +107,11 @@ function flatten(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
-  // YOUR CODE HERE
+  if (arr.length >= 1 || arr !== undefined) {
+    return(Math.max(...arr));
+  } else if (arr.length <= 1 || arr !== undefined) {
+    return '-Infinity'
+  }
 }
 
 
