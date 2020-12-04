@@ -245,5 +245,6 @@ function toPairs(obj) {
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  // YOUR CODE HERE
+  let arrToObject = Object.fromEntries(arr);
+  return (arrToObject);
 }
