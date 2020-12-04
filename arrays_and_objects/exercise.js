@@ -209,7 +209,11 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  return Array.reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {});
+  // Convert object to array
+  let arr = Object.entries(obj);
+
+  // Swap out the key values in the array
+  return arr.reduce((arr, [key, value]) => ({ ...arr, [value]: key }), {});
 }
 
 
