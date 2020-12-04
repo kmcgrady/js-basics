@@ -234,7 +234,8 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  // YOUR CODE HERE
+  let entries = Object.entries(obj);
+  return entries;
 }
 
 
