@@ -123,7 +123,11 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  // YOUR CODE HERE
+  if (arr.length >= 1 || arr !== undefined) {
+    return(Math.min(...arr));
+  } else if (arr.length <= 1 || arr !== undefined) {
+    return 'Infinity'
+  }
 }
 
 
