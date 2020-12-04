@@ -137,19 +137,8 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  //Find the average of the array
-  let total = 0;
-  for(var i = 0; i < arr.length; i++) {
-      total += arr[i];
-  }
-  let avg = total / arr.length;
-
-  //Check to see if array is empty, if not return average. If empty, return null
-  if (arr.length >= 1 || arr !== undefined) {
-    return avg;
-  } else if (arr.length <= 1 || arr !== undefined) {
-    return null;
-  }
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return (arr.length / arr.reduce(reducer));
 }
 
 
@@ -220,8 +209,7 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  // Needs work
-  return obj.reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {});
+  return Array.reduce((obj, [key, value]) => ({ ...obj, [value]: key }), {});
 }
 
 
