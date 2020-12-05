@@ -138,7 +138,7 @@ function min(arr) {
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  return (arr.length / arr.reduce(reducer));
+  return (arr.length / arr.reduce(reducer, 0));
 }
 
 
