@@ -45,10 +45,13 @@ function caesarShiftInt(integer) {
   } else if (integer > 122) {
     throw 'Error: integer too high';
   } else if ((integer + 13) > 122) {
-    // This would also work >> return (integer + 13) - 123 + 97;
-    return (integer + 13) % 123 + 97;
+      // taking the difference from 123, to determine how much to add to 97 to "wrap around"
+      const diff = integer + 13 - 123
+      const value = diff + 97
+    // returns the string from that char code
+    return String.fromCharCode(value)
   } else {
-    return integer + 13;
+    return String.fromCharCode(integer + 13);
   }
 }
 
@@ -67,10 +70,17 @@ function caesarShiftInt(integer) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
 function caesarShiftChar(char){
-  if (char === char) {
-    return char;
+  //   compare if the char.toUpperCase == itself
+  if (char.toUpperCase() == char && char.toLowerCase() !== char) {
+    const lowerCase = char.toLowerCase()
+    const charCode = lowerCase.charCodeAt()
+    return caesarShiftInt(charCode);
   }
-  
+  if (char.toUpperCase() != char && char.toLowerCase() == char){
+    const charCode = char.charCodeAt()
+    return caesarShiftInt(charCode)
+  }
+  return char
 }
 
 
