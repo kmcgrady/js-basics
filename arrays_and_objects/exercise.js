@@ -4,7 +4,11 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  // YOUR CODE HERE
+  let sum = 0;
+  for (let i=0; i<arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
 }
 
 
@@ -14,7 +18,11 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  // YOUR CODE HERE
+  let product = 1;
+  for (let i=0; i<arr.length; i++){
+    product = product * arr[i];
+  }
+  return product;
 }
 
 // Define a function named concatenate that takes in one argument.
@@ -23,9 +31,16 @@ function product(arr) {
 // Return the concatenation of all the strings in the array. For example, given
 // ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
 // array is empty, return ''.
+
 function concatenate(arr) {
-  // YOUR CODE HERE
+  // We could also check if the array is empty with >> (arr.length == 0)
+  if (!arr || !arr.length) {
+    return '';
+  } else {
+    return arr.join('');
+  }
 }
+
 
 // Define a function named repeat that takes in two arguments.
 //     str (string)
@@ -34,7 +49,7 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  // YOUR CODE HERE
+  return (`${str.repeat(times)}`);
 }
 
 
@@ -44,7 +59,7 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  // YOUR CODE HERE
+  return grades.filter((grade) => grade >= 70);
 }
 
 
@@ -55,8 +70,18 @@ function filterPassingGrades(grades) {
 //
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
+
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+  // Return map of new array
+  return arr.map((each) => {
+    // If the number is equal to 'from' value, return 'to' value
+    if (each === from) {
+      // return goes to next loop
+      return to;
+    }
+    // Return same value if each !== from
+    return each;
+  })
 }
 
 
@@ -70,7 +95,7 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  // YOUR CODE HERE
+  return (arr.flat());
 }
 
 
@@ -82,7 +107,11 @@ function flatten(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
-  // YOUR CODE HERE
+  if (arr.length >= 1 || arr !== undefined) {
+    return(Math.max(...arr));
+  } else if (arr.length <= 1 || arr !== undefined) {
+    return '-Infinity'
+  }
 }
 
 
@@ -94,7 +123,11 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  // YOUR CODE HERE
+  if (arr.length >= 1 || arr !== undefined) {
+    return(Math.min(...arr));
+  } else if (arr.length <= 1 || arr !== undefined) {
+    return 'Infinity';
+  }
 }
 
 
@@ -104,7 +137,8 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  // YOUR CODE HERE
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return (arr.length / arr.reduce(reducer, 0));
 }
 
 
@@ -130,7 +164,11 @@ function median (arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  // YOUR CODE HERE
+  if (arr.includes(str)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -171,7 +209,11 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  // YOUR CODE HERE
+  // Convert object to array
+  let reverseObj = Object.entries(obj);
+
+  // Swap out the key values in the array
+  return reverseObj.reduce((reverseObj, [key, value]) => ({ ...reverseObj, [value]: key }), {});
 }
 
 
@@ -181,7 +223,7 @@ function invert(obj) {
 // Return an array of the values of the object. For example, given
 // { a: 1, b: 2, c: 3 }, then return [1, 2, 3].
 function values(obj) {
-  // YOUR CODE HERE
+  return Object.values(obj)
 }
 
 
@@ -192,7 +234,8 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  // YOUR CODE HERE
+  let entries = Object.entries(obj);
+  return entries;
 }
 
 
@@ -203,5 +246,6 @@ function toPairs(obj) {
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  // YOUR CODE HERE
+  let arrToObject = Object.fromEntries(arr);
+  return (arrToObject);
 }
