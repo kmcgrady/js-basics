@@ -11,7 +11,13 @@ JavaScript has a pair of methods to convert characters to and from ASCII codes.
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
 
+"\n".charCodeAt(0);
+
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+
+String.fromCharCode(10)
+
 
 The Caesar cipher works like this.
 
@@ -39,6 +45,15 @@ It'll take a few steps to solve this cipher. Have fun!
 // For example, given 97, then return 110. And given 110, then return 97.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
+
+// this returns the string associated with the char code.  Example : 110 is the char code for the letter 'n'
+console.log("FROM CHAR CODE: ",String.fromCharCode(110))
+
+// charCodeAt finds the ascii code of a letter in a string, the reverse of String.fromCharCode()
+// or if it's a single character, like 'a'.charCodeAt() , you do not have to pass the index of the string
+// if I pass 'abc'.charCodeAt(1), it will return the char code for 'b'
+console.log("CHAR CODE AT: ", "abcdefghijklmnopqrstuvwxyz".charCodeAt(13))
+
 function caesarShiftInt(integer) {
   if (integer < 97) {
     throw 'Error: integer too low';
@@ -48,7 +63,7 @@ function caesarShiftInt(integer) {
       // taking the difference from 123, to determine how much to add to 97 to "wrap around"
       const diff = integer + 13 - 123
       const value = diff + 97
-    // returns the string from that char code
+      // returns the string from that char code
     return String.fromCharCode(value)
   } else {
     return String.fromCharCode(integer + 13);
@@ -72,11 +87,12 @@ function caesarShiftInt(integer) {
 function caesarShiftChar(char){
   //   compare if the char.toUpperCase == itself
   if (char.toUpperCase() == char && char.toLowerCase() !== char) {
+    // symbols will be unchanged, but letters will become lower case
     const lowerCase = char.toLowerCase()
     const charCode = lowerCase.charCodeAt()
     return caesarShiftInt(charCode);
   }
-  if (char.toUpperCase() != char && char.toLowerCase() == char){
+  if(char.toUpperCase() != char && char.toLowerCase() == char){
     const charCode = char.charCodeAt()
     return caesarShiftInt(charCode)
   }
@@ -92,10 +108,16 @@ function caesarShiftChar(char){
 //
 // HINT: You'll need a loop for this.
 function encodeMessage(message) {
-  const codeUnits = new Array(message.length);
-  for (let i = 0; i < codeUnits.length; i++) {
-    codeUnits[i] = message.charCodeAt(i);
-  }
+  //   split the string into an array of all of it's characters
+  // Example: 'hey'.split('') = ['h', 'e', 'y']
+  const messageArray = message.split('')
+  const encodedMessageArray = messageArray.map((letter) => {
+    const encodedLetter = caesarShiftChar(letter)
+    return encodedLetter
+  })
+  // joins the array of letters back into a string
+  const encodedMessage = encodedMessageArray.join('')
+  return encodedMessage
 }
 
 
@@ -106,6 +128,7 @@ function encodeMessage(message) {
 // 'uryyb, gurer!', then return 'Hello, there!'.
 //
 // HINT: Is there a way to use the encodeMessage() function?
+
 function decodeMessage(message) {
-  return encodeMessage.atob(message);
+  return encodeMessage(message)
 }
