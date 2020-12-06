@@ -5,6 +5,11 @@
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
   // YOUR CODE HERE
+  var s = 0;
+  for(var i = 0; i<arr.length; i++){
+    s = s + arr[i];
+  }
+  return(s)
 }
 
 
