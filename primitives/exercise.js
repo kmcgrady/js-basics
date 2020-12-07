@@ -219,7 +219,7 @@ function remainder(numerator, denominator) {
 //
 // Hint: What number will give you a remainder of 0 if the argument is even?
 function isEven(integer) {
-  if (integer % 3) {
+  if (integer % 2 === 0) {
     return true; 
   } else {
     return false; 
@@ -271,7 +271,15 @@ function isVowel(string) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 function largestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  if (value1 > value2 && value1 > value3) {
+    return value1;
+  }
+  if (value2 > value1 && value2 > value3) {
+    return value2;
+  }
+  if (value3 > value1 && value3 > value2) {
+    return value3;
+  }
 }
 
 
@@ -296,7 +304,15 @@ function largestOfThree(value1, value2, value3) {
 //
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function longestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  if (value1.length > value2.length && value1.length > value3.length) {
+    return value1.length;
+  }
+  if (value2.length > value1.length && value2.length > value3.length) {
+    return value2.length;
+  }
+  if (value3.length > value1.length && value3.length > value2.length) {
+    return value3.length;
+  }
 }
 
 
