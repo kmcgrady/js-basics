@@ -4,7 +4,11 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  // YOUR CODE HERE
+  let sumTotal = 0;
+    for (i = 0; i < arr.length; ++i) {
+      sumTotal += arr[i]; 
+    }
+    return sumTotal;
 }
 
 
@@ -14,17 +18,25 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  // YOUR CODE HERE
+  let sumTotal = 1;
+    for (i = 0; i < arr.length; ++i) {
+      sumTotal *= arr[i]; 
+    }
+    return sumTotal;
 }
 
 // Define a function named concatenate that takes in one argument.
 //    arr (array of strings)
 //
 // Return the concatenation of all the strings in the array. For example, given
-// ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
-// array is empty, return ''.
+// ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. 
+// If the array is empty, return ''.
 function concatenate(arr) {
-  // YOUR CODE HERE
+  if (arr.length > 0) {
+    return arr.join('');
+  }  else {
+    return '';
+  }
 }
 
 // Define a function named repeat that takes in two arguments.
@@ -34,7 +46,11 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  // YOUR CODE HERE
+  if (times > 0)
+    return str.repeat(times);
+  else {
+    return repeat;
+  }
 }
 
 
@@ -44,9 +60,14 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  // YOUR CODE HERE
+  let newArr = [];
+  for (var i = 0; i < grades.length; i++) {
+    newArr = grades.filter(grade => grade >= 70);
+    // console.log(newArr);
+  }
+  // console.log(newArr);
+  return newArr;
 }
-
 
 // Define a function named replace that takes in three arguments.
 //    arr (array of numbers)
@@ -56,7 +77,15 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+  for (var i = 0; i < arr.length; i++) {
+    // use the for loop to itereate over each value
+    if (arr[i] === from) {
+      // find the indices of i which is  equal to 'from'
+      arr[i] = to;
+      //change the indices of i whihc is equal to from and change it to 'to'
+    }
+  }
+  return arr;
 }
 
 
@@ -70,7 +99,14 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  // YOUR CODE HERE
+  let newArr = [];
+    for (var i = 0; i < arr.length; i++) {
+      newArr = newArr.concat(arr[i]);
+      // console.log(newArr);
+    }
+  // console.log(newArr);
+  // this with log as many time as the looop has to run to validate the function
+  return newArr;
 }
 
 
@@ -82,7 +118,7 @@ function flatten(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
-  // YOUR CODE HERE
+  return Math.max(...arr);
 }
 
 
@@ -94,7 +130,7 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  // YOUR CODE HERE
+  return Math.min(...arr)
 }
 
 
@@ -104,10 +140,19 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  // YOUR CODE HERE
+  let average;
+  // declare the variable globally so that qwe can use them locally
+  if (arr.length == 0) {
+    average = null;
+    // here the variable is being used locally and being passed info
+  } else {
+      let length = arr.length;
+      let total = arr.reduce((sum, val) => (sum += val));
+      average = total/length;
+      // here the variable is being used locally and being passed info
+  }
+  return average;
 }
-
-
 // Define a function named median that takes in one argument.
 //    arr (array of numbers)
 //
@@ -120,7 +165,24 @@ function mean(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function median (arr) {
-  // YOUR CODE HERE
+  let sortedArr = arr.sort();
+    // console.log(sortedArr);
+  let middle = Math.ceil(arr.length / 2);
+    // console.log(middle);
+  
+  let medianArr; 
+
+  if (arr.length == 0){
+    medianArr = null;
+  } else if (arr.length % 2 == 0) {
+    // if the modus has no remainer. ie. is EVEN
+    medianArr = (sortedArr[middle] + sortedArr[middle - 1]) / 2;
+    // console.log(medianArr);
+  } else {
+    medianArr = sortedArr[middle - 1];
+    // console.log(medianArr);
+  }
+  return medianArr;
 }
 
 
@@ -130,7 +192,12 @@ function median (arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  // YOUR CODE HERE
+  console.log(str);
+    if (arr.includes(str)) {
+      return true;
+    } else {
+      return false;
+    }
 }
 
 
@@ -147,7 +214,21 @@ function contains(arr, str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 function distance(point1, point2) {
-  // YOUR CODE HERE
+    // console.log(point1);
+    // console.log(point1.x);
+    // console.log(point1.y);
+    // console.log(point2);
+    // console.log(point2.x);
+    // console.log(point2.y);
+  let diffX = Math.abs(point1.x - point2.x);
+  let diffY = Math.abs(point1.y - point2.y);
+    console.log(diffX);
+    console.log(diffY);
+    console.log(Math.pow(diffX, 2));
+    console.log(Math.pow(diffY, 2));
+  let catDistance = Math.pow(diffX, 2) + Math.pow(diffY, 2);
+    console.log(Math.sqrt(catDistance));
+  return Math.sqrt(catDistance);
 }
 
 

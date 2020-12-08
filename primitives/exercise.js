@@ -1,106 +1,96 @@
 // Define a function named sum that takes two arguments
-//    a (number)
-//    b (number)
-//
+// var a  = 1;
+// var b  = 2;
 // Return the sum of these two arguments
 function sum(a, b) {
-  // YOUR CODE HERE
+  return a + b;
 }
 
 // Define a function named product that takes two arguments
-//    a (number)
-//    b (number)
-//
+// var a  = 1;
+// var b  = 2;
 // Return the product of these two arguments
 function product(a, b) {
-  // YOUR CODE HERE
+  return a * b;
 }
 
 // Define a function named sumAndProduct that takes three arguments
-//    x (number)
-//    y (number)
-//    z (number)
-//
+// var x = 1;
+// var y = 2;
+// var z = 3;
 // Return the sum of the first two arguments multiplied by the third argument.
-// For example, given 1, 2, and 5, then return 15.
-//
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
-  // YOUR CODE HERE
+  return (x + y) * z;
 }
 
 // Define a function named roundUp that takes one argument
-//    decimal (number)
-//
+// var decimal  = 1.23456;
 // Return the argument rounded up to the nearest integer
-//
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
-  // YOUR CODE HERE
+  return Math.ceil(decimal);
 }
 
-
 // Define a function named toFahrenheit that takes one argument
-//    celsius (number)
-//
+// var celsius = 37;
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
-// Use Google to find the formula.
 function toFahrenheit(celcius) {
-  // YOUR CODE HERE
+  return Math.ceil((celcius * 1.8) + 32);
 }
 
 // Define a function named areaOfCircle that takes one argument
-//    radius (number)
-//
+// var radius = 12;
 // Return the area of a circle using that argument. Use Google to find the
 // formula.
-//
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 function areaOfCircle(radius) {
-  // YOUR CODE HERE
+  return Math.PI * radius * radius;
 }
 
 // Define a function named areaOfRing that takes two arguments
-//    outerRadius (number)
-//    innerRadius (number)
+// var outerRadius = 12;
+// var innerRadius = 6;
 //
 // Return the area of a circular ring using these arguments. Use Google to find
 // the formula.
 function areaOfRing(outerRadius, innerRadius) {
-  // YOUR CODE HERE
+  return (Math.PI * outerRadius * outerRadius) - (Math.PI * innerRadius * innerRadius)
 }
 
 // Define a function named greet that takes 2 arguments
-//    firstName (string)
-//    lastName (string)
-//
+// var firstName = 'Kailana';
+// var lastName = 'Sommer';
 // Return a string in the format 'Hello, Kelly Rippa!' using these arguments
-//
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
 function greet(firstName, lastName) {
-  // YOUR CODE HERE
-}
+    return (`Hello, ${firstName} ${lastName}!`);
+  }
+
 
 // Define a function named toSentence that takes four arguments
-//    word1 (string)
-//    word2 (string)
-//    word3 (string)
-//    oxfordComma (boolean)
+// var word1 = 'wax';
+// var word2 = 'leg rope';
+// var word3 = 'zinc';
+// var oxfordComma = true;
 //
 // If oxfordComma is true,
 //    Return a string in the format "word1, word2, and word3."
 // If oxfordComma is false,
 //    Return a string in the format "word1, word2 and word3."
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 function toSentence(word1, word2, word3, oxfordComma) {
-  // YOUR CODE HERE
+  if (oxfordComma) {
+    return word1 + ', ' + word2 + ',' + ' and ' + word3 + '.';
+  } else {
+    return word1 + ', ' + word2 + ' and ' + word3 + '.';
+  }
 }
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
+
 
 // Define a function named toRoman that takes one argument
-//    arabic (number)
+// var  arabic = 5
 //
 // If the argument is less than 1
 //    Return null
@@ -112,7 +102,34 @@ function toSentence(word1, word2, word3, oxfordComma) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
 function toRoman(arabic) {
-  // YOUR CODE HERE
+  switch(true) {
+    case (arabic < 1):
+      return null;
+    case (arabic > 10):
+      return null;
+    case (arabic == 1): 
+      return 'I';
+    case (arabic == 2): 
+      return 'II';
+    case (arabic == 3): 
+      return 'III';
+    case (arabic == 4):
+      return 'IV';
+      case (arabic == 5): 
+      return 'V';
+    case (arabic == 6): 
+      return 'VI';
+    case (arabic == 7): 
+      return 'VII';
+    case (arabic == 8): 
+      return 'VIII';
+    case (arabic == 9): 
+      return 'IX';
+    case (arabic == 10): 
+      return 'X';
+    default: 'I';
+      // code block
+  }
 }
 
 // Define a function toDolla that takes one argument
@@ -123,9 +140,8 @@ function toRoman(arabic) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 function toDolla(amount) {
-  // YOUR CODE HERE
+  return "$" + amount.toFixed(2);
 }
-
 
 // Define a function named percentage that takes two arguments
 //    numerator (number)
@@ -134,8 +150,9 @@ function toDolla(amount) {
 // Return the percentage of the first argument divided by the second. For
 // example, given 1 and 4, then return '25.0%'.
 function percentage(numerator, denominator) {
-  // YOUR CODE HERE
+  return ((numerator/denominator)*100).toFixed(1) + "%";
 }
+
 
 
 // Define a function named isStrictlyEqual that takes two arguments
@@ -151,7 +168,11 @@ function percentage(numerator, denominator) {
 //
 // See https://dorey.github.io/JavaScript-Equality-Table/
 function isStrictlyEqual(value1, value2) {
-  // YOUR CODE HERE
+  if (value1 === value2) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -166,7 +187,11 @@ function isStrictlyEqual(value1, value2) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
 function isLooselyEqual(value1, value2) {
-  // YOUR CODE HERE
+  if (value1 == value2) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -179,7 +204,7 @@ function isLooselyEqual(value1, value2) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
 function remainder(numerator, denominator) {
-  // YOUR CODE HERE
+  return numerator%denominator;
 }
 
 
@@ -193,7 +218,11 @@ function remainder(numerator, denominator) {
 //
 // Hint: What number will give you a remainder of 0 if the argument is even?
 function isEven(integer) {
-  // YOUR CODE HERE
+  if (integer % 2 == 0){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -205,7 +234,11 @@ function isEven(integer) {
 // Otherwise
 //    Return false
 function isOdd(integer) {
-  // YOUR CODE HERE
+  if (integer % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -219,9 +252,13 @@ function isOdd(integer) {
 //
 // Treat 'y' as a consonant.
 function isVowel(string) {
-  // YOUR CODE HERE
+  if (string === 'a' || string === 'e' || string === 'i' || string === 'o' || string === 'u') {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
-
 
 // Define a function named largestOfThree which takes three arguments
 //    value1 (number)
@@ -232,19 +269,9 @@ function isVowel(string) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 function largestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  return Math.max(value1, value2, value3);
 }
 
-
-// Define a function named longestOfThree which takes three arguments
-//    value1 (string)
-//    value2 (string)
-//    value3 (string)
-//
-// Return the longest argument by length
-//
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
-//
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 // Define a function named longestOfThree which takes three arguments
 //    value1 (string)
@@ -257,7 +284,14 @@ function largestOfThree(value1, value2, value3) {
 //
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function longestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  const longest = Math.max(value1.length, value2.length, value3.length);
+  if (longest == value1.length) {
+    return value1;
+  } else if (longest == value2.length) {
+    return value2;
+  } else {
+    return value3;
+  }
 }
 
 
@@ -275,7 +309,18 @@ function longestOfThree(value1, value2, value3) {
 // Otherwise
 //    Return 'up to you'
 function iceCreamPosition(pieTemperature, iceCreamFlavor) {
-  // YOUR CODE HERE
+    if (iceCreamFlavor == 'cardamom' || iceCreamFlavor == 'cardamom') {
+      return 'not at all';
+    } 
+    if (pieTemperature == 'cold') {
+      return "on top";
+    }
+    if (pieTemperature == 'warm') {
+      return 'on the side';
+    } else {
+      return 'up to you';
+    }
+
 }
 
 
@@ -289,8 +334,16 @@ function iceCreamPosition(pieTemperature, iceCreamFlavor) {
 //
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
 function isLeapYear(year) {
-  // YOUR CODE HERE
+  if (year % 400 === 0){
+    return true;
+  }
+  if (year % 100 === 0) {
+    return false;
+  }
+  return year % 4 === 0;
 }
+
+
 
 
 // Define a function named shout that takes one argument
@@ -301,7 +354,7 @@ function isLeapYear(year) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 function shout(message) {
-  // YOUR CODE HERE
+  return message.toUpperCase();
 }
 
 
@@ -313,7 +366,7 @@ function shout(message) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 function whisper(message) {
-  // YOUR CODE HERE
+  return 'shhh... ' + message.toLowerCase();
 }
 
 
@@ -332,7 +385,12 @@ function whisper(message) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 function stopAt(source, stop) {
-  // YOUR CODE HERE
+  // console.log(source.indexOf(stop));
+  let stopIndex = source.indexOf(stop);
+  // console.log(stopIndex);
+  let sourceToStop = source.substring(0,stopIndex);
+  // console.log(sourceToStop);
+  return sourceToStop.trim();
 }
 
 
@@ -344,7 +402,8 @@ function stopAt(source, stop) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 function capitalize(message) {
-  // YOUR CODE HERE
+  return message.charAt(0).toUpperCase() + message.slice(1);
+  // get a character at index 0 and capitalise, then final the rest of the strong and concat minus the first letter
 }
 
 
@@ -356,8 +415,17 @@ function capitalize(message) {
 // If the argument's length is 5 or more characters
 //    Return the argument
 function leftPad5(word) {
-  // YOUR CODE HERE
+  // let shorterThanFive = (word.padStart(4, ' ')).substring(0,5);
+  // let shorterThanFive = (word.padStart(4)).substring(0,5);
+    console.log(word.toString().padStart(5, ' '));
+  if (word.length <= 5) {
+    return (word.toString().padStart(5, ' '));
+  } else if (word.length >= 5) {
+    return word
+  }
 }
+
+// This ^^ console logs correct - I'm a bit confused.
 
 
 // Define a function named superPicky that takes one argument
@@ -370,9 +438,15 @@ function leftPad5(word) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 function superPicky(value) {
-  // YOUR CODE HERE
+  let type = typeof value;
+  console.log(value)
+  if (typeof value === 'string') {
+    return 'Thanks! Got it.';
+  } else {
+    return `I wanted a string, but all I got was a stinking ${type}`;
+  }
 }
-
+// if (typeof value === 1 || typeof value === {} || typeof value === true || typeof value === 'function')
 
 // Define a function named calculateTaxRate that takes two arguments
 //    salary (number from 1 to 74,900)
@@ -383,6 +457,19 @@ function superPicky(value) {
 // If the salary is greater than 74,900
 //    Return a string that says 'Better call an accountant'
 // Otherwise
+//    Return a string for the tax percentage they are in:
+//       * single up to (and including) $9,225 => '10%'
+//       * single above $9,225 => '15%'
+//       * joint up to (and including) $18,450 => '10%'
+//       * joint above $18,450 => '15%'
 function calculateTaxRate(salary, status) {
-  // YOUR CODE HERE
+  if (status !== 'single' || status !== 'joint') {
+    return 'Better call an accountant';
+  } if (salary > 74900) {
+    return 'Better call an accountant';
+  } else if (status === 'single' && salary <= 9225) {
+    return '10%';
+  } else if (status === 'single' && salary >= 9225) {
+    return '15%';
+  }
 }
