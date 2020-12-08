@@ -75,7 +75,7 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+
 }
 
 
@@ -89,7 +89,8 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  // YOUR CODE HERE
+  var flattened = [].concat.apply([], arr);
+  return flattened;
 }
 
 
@@ -203,7 +204,8 @@ function distance(point1, point2) {
 // the latest object to have the key will determine the value. For example,
 // given {c: 3} and {c: 4}, then return {c: 4}.
 function combine(obj1, obj2) {
-  // YOUR CODE HERE
+  Object.keys(obj2).forEach(function(key) { obj1[key] = obj2[key]; });
+  return obj1;
 }
 
 
