@@ -4,16 +4,20 @@
 //
 // Return the sum of these two arguments
 function sum(a, b) {
-  // YOUR CODE HERE
+    var add = a+b;
+    return (add)
 }
+    
+
 
 // Define a function named product that takes two arguments
 //    a (number)
 //    b (number)
 //
 // Return the product of these two arguments
-function product(a, b) {
-  // YOUR CODE HERE
+function product(a,b) {
+  var multiply = a*b;
+    return (multiply)
 }
 
 // Define a function named sumAndProduct that takes three arguments
@@ -26,7 +30,8 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
-  // YOUR CODE HERE
+ var multiplyadd = z*(x+y);
+ return (multiplyadd)
 }
 
 // Define a function named roundUp that takes one argument
@@ -36,7 +41,8 @@ function sumAndProduct(x, y, z) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
-  // YOUR CODE HERE
+  var round1 = Math.ceil(decimal);
+  return (round1)
 }
 
 
