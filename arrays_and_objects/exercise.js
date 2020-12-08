@@ -192,7 +192,7 @@ function median (arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  console.log(str);
+  // console.log(str);
     if (arr.includes(str)) {
       return true;
     } else {
@@ -222,12 +222,12 @@ function distance(point1, point2) {
     // console.log(point2.y);
   let diffX = Math.abs(point1.x - point2.x);
   let diffY = Math.abs(point1.y - point2.y);
-    console.log(diffX);
-    console.log(diffY);
-    console.log(Math.pow(diffX, 2));
-    console.log(Math.pow(diffY, 2));
+    // console.log(diffX);
+    // console.log(diffY);
+    // console.log(Math.pow(diffX, 2));
+    // console.log(Math.pow(diffY, 2));
   let catDistance = Math.pow(diffX, 2) + Math.pow(diffY, 2);
-    console.log(Math.sqrt(catDistance));
+    // console.log(Math.sqrt(catDistance));
   return Math.sqrt(catDistance);
 }
 
@@ -242,9 +242,13 @@ function distance(point1, point2) {
 // the latest object to have the key will determine the value. For example,
 // given {c: 3} and {c: 4}, then return {c: 4}.
 function combine(obj1, obj2) {
-  // YOUR CODE HERE
+ let newObj = {
+   ...obj1,
+   ...obj2
+ };
+//  console.log(newObj)
+ return newObj;
 }
-
 
 // Define a function called invert that takes in one argument.
 //    obj (object)
@@ -252,8 +256,10 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  // YOUR CODE HERE
-}
+  const newObj = {};
+  Object.keys(obj).forEach((a => { newObj[obj[a]] = a }));
+  console.log(newObj)
+  return newObj;}
 
 
 // Define a function named values that takes in one argument.
