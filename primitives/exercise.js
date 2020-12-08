@@ -4,6 +4,7 @@
 //
 // Return the sum of these two arguments
 function sum(a, b) {
+  return a+b;
   // YOUR CODE HERE
 }
 
@@ -13,6 +14,7 @@ function sum(a, b) {
 //
 // Return the product of these two arguments
 function product(a, b) {
+  return a * b;
   // YOUR CODE HERE
 }
 
@@ -26,6 +28,7 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
+  return (x + y) * z
   // YOUR CODE HERE
 }
 
@@ -36,6 +39,7 @@ function sumAndProduct(x, y, z) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
+  return Math.ceil(decimal)
   // YOUR CODE HERE
 }
 
@@ -45,7 +49,8 @@ function roundUp(decimal) {
 //
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
-function toFahrenheit(celcius) {
+function toFahrenheit(celsius) {
+  return Math.round(celsius * 9/5 +32);
   // YOUR CODE HERE
 }
 
@@ -57,6 +62,7 @@ function toFahrenheit(celcius) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 function areaOfCircle(radius) {
+  return (radius * radius * Math.PI)
   // YOUR CODE HERE
 }
 
@@ -68,6 +74,7 @@ function areaOfCircle(radius) {
 // the formula.
 function areaOfRing(outerRadius, innerRadius) {
   // YOUR CODE HERE
+  return (Math.pow(outerRadius,2) * Math.PI) - (Math.pow(innerRadius,2) * Math.PI);
 }
 
 // Define a function named greet that takes 2 arguments
@@ -79,6 +86,7 @@ function areaOfRing(outerRadius, innerRadius) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
 function greet(firstName, lastName) {
   // YOUR CODE HERE
+  return ("Hello," + " " + firstName + ' ' +lastName + "!");
 }
 
 // Define a function named toSentence that takes four arguments
@@ -97,7 +105,13 @@ function greet(firstName, lastName) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 function toSentence(word1, word2, word3, oxfordComma) {
   // YOUR CODE HERE
+  if (oxfordComma){
+    return (word1 +", "+ word2 + ", " + 'and ' + word3 + '.');
+  }else{
+    return (word1 + ", " + word2 + ' and ' + word3 + '.');
+  }  
 }
+
 
 // Define a function named toRoman that takes one argument
 //    arabic (number)
@@ -112,8 +126,34 @@ function toSentence(word1, word2, word3, oxfordComma) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
 function toRoman(arabic) {
-  // YOUR CODE HERE
+  if (arabic < 1 || arabic > 10) {
+    return null;
+  } else if (arabic === 1) {
+    return "I";
+  } else if (arabic === 2) {
+    return "II";
+  } else if (arabic === 3) {
+    return "III";
+  } else if (arabic === 4) {
+    return "IV";
+  } else if (arabic === 5) {
+    return "V";
+  } else if (arabic === 6) {
+    return "VI";
+  } else if (arabic === 7) {
+    return "VII";
+  } else if (arabic === 8) {
+    return "VIII";
+  } else if (arabic === 9) {
+    return "IX";
+  } else if (arabic === 10) {
+    return "X";
+  }
 }
+
+
+  // YOUR CODE HERE
+
 
 // Define a function toDolla that takes one argument
 //    amount (number)
@@ -124,7 +164,9 @@ function toRoman(arabic) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 function toDolla(amount) {
   // YOUR CODE HERE
+  return "$" +  Number.parseFloat(amount).toFixed(2);
 }
+
 
 
 // Define a function named percentage that takes two arguments
@@ -135,6 +177,7 @@ function toDolla(amount) {
 // example, given 1 and 4, then return '25.0%'.
 function percentage(numerator, denominator) {
   // YOUR CODE HERE
+  return ((numerator/denominator * 100).toFixed(1) + "%")
 }
 
 
@@ -151,6 +194,13 @@ function percentage(numerator, denominator) {
 //
 // See https://dorey.github.io/JavaScript-Equality-Table/
 function isStrictlyEqual(value1, value2) {
+  if(value1 === value2){
+    return true
+  } else{
+    return false
+  }
+  
+  
   // YOUR CODE HERE
 }
 
@@ -167,6 +217,11 @@ function isStrictlyEqual(value1, value2) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
 function isLooselyEqual(value1, value2) {
   // YOUR CODE HERE
+  if(value1 == value2){
+    return true
+  }else{
+    return false
+  }
 }
 
 
@@ -180,6 +235,7 @@ function isLooselyEqual(value1, value2) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
 function remainder(numerator, denominator) {
   // YOUR CODE HERE
+  return numerator % denominator 
 }
 
 
@@ -194,6 +250,11 @@ function remainder(numerator, denominator) {
 // Hint: What number will give you a remainder of 0 if the argument is even?
 function isEven(integer) {
   // YOUR CODE HERE
+  if (integer % 2 == 0){
+  return true
+  }else{
+    return false
+  }
 }
 
 
@@ -206,6 +267,11 @@ function isEven(integer) {
 //    Return false
 function isOdd(integer) {
   // YOUR CODE HERE
+  if(integer % 2 !== 0){
+  return true
+  }else{
+    return false
+  }
 }
 
 
@@ -220,6 +286,11 @@ function isOdd(integer) {
 // Treat 'y' as a consonant.
 function isVowel(string) {
   // YOUR CODE HERE
+  if (string === "a" || string ===  "e" || string === "i" ||  string ==="o" ||  string ==="u"){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 
@@ -233,6 +304,7 @@ function isVowel(string) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 function largestOfThree(value1, value2, value3) {
   // YOUR CODE HERE
+  return Math.max(value1, value2, value3)
 }
 
 
@@ -258,6 +330,13 @@ function largestOfThree(value1, value2, value3) {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function longestOfThree(value1, value2, value3) {
   // YOUR CODE HERE
+  if(value1.length > value2.length && value1.length > value3.length){
+    return (value1) 
+  }else if(value2.length > value1.length && value2.length > value3.length){
+    return(value2)
+  }else if(value3.length > value2.length && value3.length > value1.length){
+    return(value3)
+  }
 }
 
 
@@ -276,6 +355,15 @@ function longestOfThree(value1, value2, value3) {
 //    Return 'up to you'
 function iceCreamPosition(pieTemperature, iceCreamFlavor) {
   // YOUR CODE HERE
+  if(iceCreamFlavor == 'cardamom'){
+    return ("not at all")
+  }else if(pieTemperature == 'cold'){
+    return ('on top')
+  }else if(pieTemperature == 'warm'){
+    return ('on the side')
+  }else{
+    return ('up to you')
+  }
 }
 
 
@@ -290,7 +378,9 @@ function iceCreamPosition(pieTemperature, iceCreamFlavor) {
 // See: https://en.wikipedia.org/wiki/Leap_year#Algorithm
 function isLeapYear(year) {
   // YOUR CODE HERE
+  return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 }
+
 
 
 // Define a function named shout that takes one argument
@@ -302,6 +392,7 @@ function isLeapYear(year) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 function shout(message) {
   // YOUR CODE HERE
+  return (message.toUpperCase())
 }
 
 
@@ -314,6 +405,7 @@ function shout(message) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 function whisper(message) {
   // YOUR CODE HERE
+  return 'shhh... ' + (message.toLowerCase())
 }
 
 
@@ -333,6 +425,10 @@ function whisper(message) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 function stopAt(source, stop) {
   // YOUR CODE HERE
+  const array = source.split(' ');
+  const slicedArray = array.slice(0, array.indexOf(stop));
+  const newValue = slicedArray.join(' ');
+  return newValue;
 }
 
 
@@ -345,6 +441,7 @@ function stopAt(source, stop) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 function capitalize(message) {
   // YOUR CODE HERE
+  return message[0].toUpperCase() + message.substr(1);
 }
 
 
@@ -357,6 +454,10 @@ function capitalize(message) {
 //    Return the argument
 function leftPad5(word) {
   // YOUR CODE HERE
+  while (word.length < 5) {
+    word = ' ' + word;
+  }
+  return word;
 }
 
 
@@ -370,7 +471,12 @@ function leftPad5(word) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 function superPicky(value) {
-  // YOUR CODE HERE
+  if (typeof value === 'string') {
+    return 'Thanks! Got it.';
+  } else {
+    return 'I wanted a string, but all I got was a stinking ' + typeof value;
+  }
+
 }
 
 
@@ -383,6 +489,26 @@ function superPicky(value) {
 // If the salary is greater than 74,900
 //    Return a string that says 'Better call an accountant'
 // Otherwise
+// Define a function named calculateTaxRate that takes two arguments
+//    salary (number from 1 to 74,900)
+//    status (string that's either 'single' or 'joint')
+//
+// If the status is anything other than 'single' or 'joint'
+
 function calculateTaxRate(salary, status) {
-  // YOUR CODE HERE
+  if (status !== 'single' && status !== 'joint') {
+    return 'Better call an accountant';
+  } else if (salary > 74900) {
+    return 'Better call an accountant';
+  } else if (status === 'single' && salary <= 9225) {
+    return '10%';
+  } else if (status === 'single' && salary > 9225) {
+    return '15%';
+  } else if (status === 'joint' && salary <= 18450) {
+    return '10%';
+  } else if (status === 'joint' && salary > 18450) {
+    return '15%';
+  } else {
+    return 'Error messages goes here';
+}
 }

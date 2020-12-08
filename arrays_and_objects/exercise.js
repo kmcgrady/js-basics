@@ -5,6 +5,11 @@
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
   // YOUR CODE HERE
+  var s = 0;
+  for(var i = 0; i < arr.length; i++){
+    s = s + arr[i];
+  }
+  return(s)
 }
 
 
@@ -15,6 +20,11 @@ function sum(arr) {
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
   // YOUR CODE HERE
+  var p = 1;
+  for(var i = 1; i < arr.length; i++){
+    p = p * arr[i];
+  }
+  return (p)
 }
 
 // Define a function named concatenate that takes in one argument.
@@ -25,6 +35,8 @@ function product(arr) {
 // array is empty, return ''.
 function concatenate(arr) {
   // YOUR CODE HERE
+ let concatenate = (arr)
+  return (concatenate.join(''));
 }
 
 // Define a function named repeat that takes in two arguments.
@@ -35,6 +47,8 @@ function concatenate(arr) {
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
   // YOUR CODE HERE
+  let repeat = ("hi" + str.repeat(times))
+  return (str.repeat(times))
 }
 
 
@@ -45,6 +59,11 @@ function repeat(str, times) {
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
   // YOUR CODE HERE
+  let newArr = [];
+  for (var i = 0; i < grades.length; i++ ){
+   newArr = grades.filter(grade => grade >= 70);
+  }
+  return newArr;
 }
 
 
@@ -57,8 +76,14 @@ function filterPassingGrades(grades) {
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
   // YOUR CODE HERE
+  for (var i = 0; i < arr.length; i++){
+    if(arr[i] === from){
+      arr[i]= to;
+    
+    }
+  }
+   return arr;
 }
-
 
 // Define a function named flatten that takes in one argument.
 //     arr (array of arrays)
@@ -71,6 +96,11 @@ function replace(arr, from, to) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
   // YOUR CODE HERE
+   let newArr = []
+    for( var i = 0; i < arr.length; i++){
+    newArr = newArr.concat(arr[i]);
+    };
+    return newArr;
 }
 
 
@@ -83,8 +113,11 @@ function flatten(arr) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
   // YOUR CODE HERE
-}
+  return Math.max(...arr)
 
+
+}
+//Math.max([value1[, value2[, ...]]])
 
 // Define a function named min that takes in one argument.
 //    arr (array of numbers)
@@ -95,6 +128,7 @@ function max(arr) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
   // YOUR CODE HERE
+  return Math.min(...arr)
 }
 
 
@@ -105,6 +139,14 @@ function min(arr) {
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
   // YOUR CODE HERE
+  let average 
+  if(arr.length == 0){
+    return null
+  }else{
+    var length = arr.length;
+    let total = arr.reduce((sum, val) => (sum += val));
+    return total/length
+  }
 }
 
 
@@ -121,7 +163,21 @@ function mean(arr) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function median (arr) {
   // YOUR CODE HERE
+  const sortedArr = arr.sort();
+  //console.log("sortedArray: '" sortedArray)
+  
+  let mid = Math.ceil(arr.length / 2);
+  var median 
+  if(arr.length == 0){
+    median = null  //satisfys the null requirement
+  }else if (arr.length % 2 == 0){                      //this is gaining the remainder to = an even number 
+    median = (sortedArr[mid] + sortedArr[mid - 1]) / 2
+  }else{
+    median = sortedArr[mid-1] //this will give us an odd number 
+  }
+  return median;
 }
+
 
 
 // Define a function named contains that takes in two arguments.
