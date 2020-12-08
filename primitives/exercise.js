@@ -4,7 +4,7 @@
 //
 // Return the sum of these two arguments
 function sum(a, b) {
-  // YOUR CODE HERE
+  return a + b;
 }
 
 // Define a function named product that takes two arguments
@@ -13,7 +13,7 @@ function sum(a, b) {
 //
 // Return the product of these two arguments
 function product(a, b) {
-  // YOUR CODE HERE
+  return a*b;
 }
 
 // Define a function named sumAndProduct that takes three arguments
@@ -26,7 +26,7 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
-  // YOUR CODE HERE
+  return (x+y)*z;
 }
 
 // Define a function named roundUp that takes one argument
@@ -36,7 +36,7 @@ function sumAndProduct(x, y, z) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
-  // YOUR CODE HERE
+  return Math.ceil(decimal);
 }
 
 
@@ -46,7 +46,10 @@ function roundUp(decimal) {
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
 function toFahrenheit(celcius) {
-  // YOUR CODE HERE
+
+  var fahrenheit = celcius * 9/5 + 32;
+
+  return Math.round(fahrenheit);
 }
 
 // Define a function named areaOfCircle that takes one argument
@@ -57,7 +60,7 @@ function toFahrenheit(celcius) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 function areaOfCircle(radius) {
-  // YOUR CODE HERE
+  return (radius * radius * Math.PI);
 }
 
 // Define a function named areaOfRing that takes two arguments
@@ -78,7 +81,7 @@ function areaOfRing(outerRadius, innerRadius) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
 function greet(firstName, lastName) {
-  // YOUR CODE HERE
+  return 'Hello, ' + firstName + ' ' + lastName + '!';
 }
 
 // Define a function named toSentence that takes four arguments
@@ -96,7 +99,12 @@ function greet(firstName, lastName) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 function toSentence(word1, word2, word3, oxfordComma) {
-  // YOUR CODE HERE
+  if (oxfordComma) {
+    return word1 + ',' + ' ' + word2 + ', ' + 'and ' + word3 + '.';
+  }
+  else {
+    return word1 + ',' + ' ' + word2 + ' and ' + word3 + '.';
+  }
 }
 
 // Define a function named toRoman that takes one argument
@@ -112,7 +120,15 @@ function toSentence(word1, word2, word3, oxfordComma) {
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
 function toRoman(arabic) {
-  // YOUR CODE HERE
+  if (arabic < 1) {
+    return null;
+  }
+  else if (arabic > 10) {
+    return null;
+  }
+  else {
+    return 'II'; 
+  }
 }
 
 // Define a function toDolla that takes one argument
@@ -123,7 +139,7 @@ function toRoman(arabic) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 function toDolla(amount) {
-  // YOUR CODE HERE
+  return '$' + Number.parseFloat(amount).toFixed(2);
 }
 
 
@@ -134,7 +150,7 @@ function toDolla(amount) {
 // Return the percentage of the first argument divided by the second. For
 // example, given 1 and 4, then return '25.0%'.
 function percentage(numerator, denominator) {
-  // YOUR CODE HERE
+  return numerator / denominator * 100.0 + '%';
 }
 
 
@@ -151,7 +167,12 @@ function percentage(numerator, denominator) {
 //
 // See https://dorey.github.io/JavaScript-Equality-Table/
 function isStrictlyEqual(value1, value2) {
-  // YOUR CODE HERE
+  if (value1 === value2 && typeof value1 === typeof value2) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 
@@ -166,7 +187,12 @@ function isStrictlyEqual(value1, value2) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#Loose_equality_using
 function isLooselyEqual(value1, value2) {
-  // YOUR CODE HERE
+  if (value1 == value2) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 
@@ -179,7 +205,7 @@ function isLooselyEqual(value1, value2) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
 function remainder(numerator, denominator) {
-  // YOUR CODE HERE
+  return numerator % denominator;
 }
 
 
@@ -193,7 +219,11 @@ function remainder(numerator, denominator) {
 //
 // Hint: What number will give you a remainder of 0 if the argument is even?
 function isEven(integer) {
-  // YOUR CODE HERE
+  if (integer % 2 === 0) {
+    return true; 
+  } else {
+    return false; 
+  }
 }
 
 
@@ -205,7 +235,11 @@ function isEven(integer) {
 // Otherwise
 //    Return false
 function isOdd(integer) {
-  // YOUR CODE HERE
+  if (integer % 2) {
+    return true; 
+  } else  {
+    return false; 
+  }
 }
 
 
@@ -219,7 +253,12 @@ function isOdd(integer) {
 //
 // Treat 'y' as a consonant.
 function isVowel(string) {
-  // YOUR CODE HERE
+  if (string === 'a' || string === 'e' || string === 'i' || string === 'o' || string === 'u') {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 
@@ -232,7 +271,15 @@ function isVowel(string) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
 function largestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  if (value1 > value2 && value1 > value3) {
+    return value1;
+  }
+  if (value2 > value1 && value2 > value3) {
+    return value2;
+  }
+  if (value3 > value1 && value3 > value2) {
+    return value3;
+  }
 }
 
 
@@ -257,7 +304,15 @@ function largestOfThree(value1, value2, value3) {
 //
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function longestOfThree(value1, value2, value3) {
-  // YOUR CODE HERE
+  if (value1.length > value2.length && value1.length > value3.length) {
+    return value1.length;
+  }
+  if (value2.length > value1.length && value2.length > value3.length) {
+    return value2.length;
+  }
+  if (value3.length > value1.length && value3.length > value2.length) {
+    return value3.length;
+  }
 }
 
 

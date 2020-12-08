@@ -4,7 +4,11 @@
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
 function sum(arr) {
-  // YOUR CODE HERE
+  var sum = 0;
+  for (i = 0; i < arr.length; i++) {
+       sum += arr[i]; // add each element in an array to total
+  }
+  return sum;
 }
 
 
@@ -14,7 +18,11 @@ function sum(arr) {
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
 function product(arr) {
-  // YOUR CODE HERE
+  var product = 1;
+  for (i = 1; i < arr.length; i++) {
+       product *= arr[i]; // add each element in an array to total
+  }
+  return product;
 }
 
 // Define a function named concatenate that takes in one argument.
@@ -24,7 +32,12 @@ function product(arr) {
 // ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
 // array is empty, return ''.
 function concatenate(arr) {
-  // YOUR CODE HERE
+  if (arr.length === 0) {
+     return '';
+  }
+  if (arr.length) {
+    return arr[0] + arr[1] + arr[2];
+  }
 }
 
 // Define a function named repeat that takes in two arguments.
@@ -34,7 +47,12 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  // YOUR CODE HERE
+  repeatedString = ''
+  while (times > 0) {
+    repeatedString += str;
+    times--;
+  }
+  return repeatedString;
 }
 
 
@@ -44,7 +62,8 @@ function repeat(str, times) {
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
 function filterPassingGrades(grades) {
-  // YOUR CODE HERE
+  const result = grades.filter(grade => grade >= 70);
+  return result;
 }
 
 
@@ -56,7 +75,7 @@ function filterPassingGrades(grades) {
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+
 }
 
 
@@ -70,7 +89,8 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  // YOUR CODE HERE
+  var flattened = [].concat.apply([], arr);
+  return flattened;
 }
 
 
@@ -82,7 +102,7 @@ function flatten(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
 function max(arr) {
-  // YOUR CODE HERE
+  return Math.max.apply(null, arr);
 }
 
 
@@ -94,7 +114,7 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  // YOUR CODE HERE
+  return Math.min.apply(null, arr);
 }
 
 
@@ -104,7 +124,13 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  // YOUR CODE HERE
+  if (arr.length) {
+  const total = arr.reduce((acc, c) => acc + c, 0);
+  return total / arr.length;
+  }
+  if (arr.length === 0) {
+    return null;
+  }
 }
 
 
@@ -120,7 +146,19 @@ function mean(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function median (arr) {
-  // YOUR CODE HERE
+  if(arr.length === 0) return null;
+
+  arr.sort(function(a,b){
+    return a-b;
+  });
+
+  var half = Math.floor(arr.length / 2);
+
+  if (arr.length % 2)
+    return arr[half];
+
+  return (arr[half - 1] + arr[half]) / 2.0;
+
 }
 
 
@@ -130,7 +168,12 @@ function median (arr) {
 //
 // Return true if that string exists in the array, otherwise false.
 function contains(arr, str) {
-  // YOUR CODE HERE
+  if (str.indexOf(arr) > -1){
+  return true;
+  }
+  else {
+    return false;
+  }
 }
 
 
@@ -147,7 +190,7 @@ function contains(arr, str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 function distance(point1, point2) {
-  // YOUR CODE HERE
+
 }
 
 
@@ -161,7 +204,8 @@ function distance(point1, point2) {
 // the latest object to have the key will determine the value. For example,
 // given {c: 3} and {c: 4}, then return {c: 4}.
 function combine(obj1, obj2) {
-  // YOUR CODE HERE
+  Object.keys(obj2).forEach(function(key) { obj1[key] = obj2[key]; });
+  return obj1;
 }
 
 
@@ -171,7 +215,15 @@ function combine(obj1, obj2) {
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
-  // YOUR CODE HERE
+  var new_obj = {};
+
+  for (var prop in obj) {
+    if(obj.hasOwnProperty(prop)) {
+      new_obj[obj[prop]] = prop;
+    }
+  }
+
+  return new_obj;
 }
 
 
