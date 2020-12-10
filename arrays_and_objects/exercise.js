@@ -257,9 +257,13 @@ function combine(obj1, obj2) {
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
 function invert(obj) {
   const newObj = {};
-  Object.keys(obj).forEach((a => { newObj[obj[a]] = a }));
-  console.log(newObj)
-  return newObj;}
+  Object.keys(obj).forEach(function(a) {
+    newObj[obj[a]] = a 
+  });
+  // Object.keys(obj).forEach((a => { newObj[obj[a]] = a }));
+  // console.log(newObj)
+  return newObj;
+}
 
 
 // Define a function named values that takes in one argument.
