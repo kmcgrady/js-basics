@@ -283,8 +283,16 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  // YOUR CODE HERE
+  var arr = Object.entries(obj)
+  for(var i = 0; i < arr.length; i++) { 
+      for(var e = 0; e < arr.length; e++){
+        console.log(arr)
+      }
+  // iterate over the ket and vhte value ^^^ this is why two for loops are nested
+  }
+  return arr; 
 }
+
 
 
 // Define a function called fromPairs that takes in one argument.
