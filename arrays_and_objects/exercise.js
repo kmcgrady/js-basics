@@ -258,7 +258,7 @@ function combine(obj1, obj2) {
 function invert(obj) {
   const newObj = {};
   Object.keys(obj).forEach(function(a) {
-    newObj[obj[a]] = a 
+    newObj[obj[a]] = a;
   });
   // Object.keys(obj).forEach((a => { newObj[obj[a]] = a }));
   // console.log(newObj)
@@ -272,8 +272,10 @@ function invert(obj) {
 // Return an array of the values of the object. For example, given
 // { a: 1, b: 2, c: 3 }, then return [1, 2, 3].
 function values(obj) {
-  // YOUR CODE HERE
+  return Object.values(obj);
 }
+
+
 
 
 // Define a function called toPairs that takes in one argument.
