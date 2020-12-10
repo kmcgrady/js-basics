@@ -152,6 +152,10 @@ mean(arr);
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function median (arr) {
+  arr.sort(function (a,b) {
+    return a-b
+  });
+
   let half = Math.floor(arr.length/2);
   if (arr.length % 2) {
     return arr[half]
@@ -166,8 +170,10 @@ function median (arr) {
 //     str (string)
 //
 // Return true if that string exists in the array, otherwise false.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 function contains(arr, str) {
-  // YOUR CODE HERE
+  return arr.includes(str)
 }
 
 
@@ -184,7 +190,7 @@ function contains(arr, str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 function distance(point1, point2) {
-  // YOUR CODE HERE
+  return Math.sqrt((point1.x - point2.x) ** 2 + (point1.y - point2.y) ** 2)
 }
 
 
@@ -197,8 +203,10 @@ function distance(point1, point2) {
 // If there's a key in more than one object,
 // the latest object to have the key will determine the value. For example,
 // given {c: 3} and {c: 4}, then return {c: 4}.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 function combine(obj1, obj2) {
-  // YOUR CODE HERE
+  return Object.assign(obj1, obj2)
 }
 
 
@@ -207,8 +215,15 @@ function combine(obj1, obj2) {
 //
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
+
+//See https://stackoverflow.com/questions/23013573/swap-key-with-value-json
 function invert(obj) {
-  // YOUR CODE HERE
+  let result = {};
+  for (var key in obj) {
+    const value = obj[key];
+    result[value] = key;
+  }
+  return result
 }
 
 
