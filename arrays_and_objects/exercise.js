@@ -276,8 +276,6 @@ function values(obj) {
 }
 
 
-
-
 // Define a function called toPairs that takes in one argument.
 //    obj (object)
 //
