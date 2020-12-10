@@ -99,14 +99,16 @@ function replace(arr, from, to) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 function flatten(arr) {
-  let newArr = [];
-    for (var i = 0; i < arr.length; i++) {
-      newArr = newArr.concat(arr[i]);
-      // console.log(newArr);
-    }
+  // let newArr = [];
+  //   for (var i = 0; i < arr.length; i++) {
+  //     newArr = newArr.concat(arr[i]);
+  //     // console.log(newArr);
+  //   }
   // console.log(newArr);
-  // this with log as many time as the looop has to run to validate the function
-  return newArr;
+  // this will log as many time as the loop has to run to validate the function
+  // return newArr;
+  let flattenedArr = arr.reduce((a, b) => [...a, ...b], []);
+  return flattenedArr;
 }
 
 
@@ -283,14 +285,16 @@ function values(obj) {
 // argument. For example, given { a: 1, b: 2 }, then return
 // [['a', 1], ['b', 2]].
 function toPairs(obj) {
-  var arr = Object.entries(obj)
-  for(var i = 0; i < arr.length; i++) { 
-      for(var e = 0; e < arr.length; e++){
-        console.log(arr)
+  var newArr = Object.entries(obj)
+  // this just creates an object from the entries in the object given - simple!
+  for(var i = 0; i < newArr.length; i++) { 
+      for(var e = 0; e < newArr.length; e++){
+        // console.log(newArr)
       }
-  // iterate over the ket and vhte value ^^^ this is why two for loops are nested
+  // iterate over the key and value ^^^ this is why two for loops are nested
   }
-  return arr; 
+  // console.log(newArr)
+  return newArr; 
 }
 
 
@@ -302,5 +306,8 @@ function toPairs(obj) {
 // argument. For example, given [['a', 1], ['b', 2]], then return
 // { a: 1, b: 2 }.
 function fromPairs(arr) {
-  // YOUR CODE HERE
+  const obj = Object.fromEntries(arr)
+  const newObj = obj.map(([key, value]) => ({key,value}));
+
+  console.log(obj); 
 }
