@@ -3,9 +3,12 @@
 //
 // Return the sum of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 10. If the array is empty, return 0.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 function sum(arr) {
-  // YOUR CODE HERE
+  return arr.reduce((a, b) => a + b, 0)
 }
+sum(arr);
 
 
 // Define a function named product that takes in one argument.
@@ -13,9 +16,12 @@ function sum(arr) {
 //
 // Return the product of all of the numbers in the array. For example, given
 // [1, 2, 3, 4], then return 24. If the array is empty, return 1.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 function product(arr) {
-  // YOUR CODE HERE
+  return arr.reduce((a, b) => a * b, 1)
 }
+sum(arr);
 
 // Define a function named concatenate that takes in one argument.
 //    arr (array of strings)
@@ -24,8 +30,13 @@ function product(arr) {
 // ['hello', 'my', 'name', 'is', 'ken'], then return 'hellomynameisken'. If the
 // array is empty, return ''.
 function concatenate(arr) {
-  // YOUR CODE HERE
+  var sentence = ''
+  for (var i = 0; i < arr.length; i++) {
+    sentence += arr[i];
+  }
+  return sentence
 }
+concatenate(arr);
 
 // Define a function named repeat that takes in two arguments.
 //     str (string)
@@ -34,8 +45,13 @@ function concatenate(arr) {
 // Return a new string containing times copies of the input str. For example,
 // given 'hi' and 4, then return 'hihihihi'.
 function repeat(str, times) {
-  // YOUR CODE HERE
+  let sentence = '';
+  for (var i = 0; i < times; i++) {
+    sentence += str
+  }
+  return sentence
 }
+repeat(str, times);
 
 
 // Define a function named filterPassingGrades that takes in one argument.
@@ -43,9 +59,13 @@ function repeat(str, times) {
 //
 // Return a new array with any grade less than 70 filtered out. For example,
 // given [88, 67, 70, 92, 53], then return [88, 70, 92].
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 function filterPassingGrades(grades) {
-  // YOUR CODE HERE
+  let result = grades.filter(grade => grade >= 70);
+  return result
 }
+filterPassingGrades(grades);
 
 
 // Define a function named replace that takes in three arguments.
@@ -55,9 +75,13 @@ function filterPassingGrades(grades) {
 //
 // Return a new array of numbers where all from elements are replaced with to.
 // For example, given [1, 3, 2, 1, 3], 1, and 4, then return [4, 3, 2, 4, 3].
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 function replace(arr, from, to) {
-  // YOUR CODE HERE
+  let result = arr.splice(from, to);
+  return result
 }
+replace(arr, from, to);
 
 
 // Define a function named flatten that takes in one argument.
@@ -68,10 +92,12 @@ function replace(arr, from, to) {
 //
 // Tip: You only need to flatten one level deep.
 //
-// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 function flatten(arr) {
-  // YOUR CODE HERE
+  let newArr = arr.flat();
+  return newArr
 }
+flatten(arr);
 
 
 // Define a function named max that takes in one argument.
@@ -81,10 +107,11 @@ function flatten(arr) {
 // then return 4. If the array is empty, return -Infinity.
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+// See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 function max(arr) {
-  // YOUR CODE HERE
+  return Math.max(...arr);
 }
-
+max(arr);
 
 // Define a function named min that takes in one argument.
 //    arr (array of numbers)
@@ -94,7 +121,7 @@ function max(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min
 function min(arr) {
-  // YOUR CODE HERE
+  return Math.min(...arr)
 }
 
 
@@ -104,9 +131,14 @@ function min(arr) {
 // Return the mean (i.e. average) of all of the numbers in the array. For
 // example, given [1, 2, 6], then return 3. If the array is empty, return null.
 function mean(arr) {
-  // YOUR CODE HERE
-}
+  if (arr === []) {
+    return null
+  } else {
+    return arr.reduce((a, b) => a + b, null) / arr.length
+  }
 
+}
+mean(arr);
 
 // Define a function named median that takes in one argument.
 //    arr (array of numbers)
@@ -120,7 +152,16 @@ function mean(arr) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function median (arr) {
-  // YOUR CODE HERE
+  arr.sort(function (a,b) {
+    return a-b
+  });
+
+  let half = Math.floor(arr.length/2);
+  if (arr.length % 2) {
+    return arr[half]
+  } else {
+    return (arr[half-1] + arr[half]) / 2
+  }
 }
 
 
@@ -129,8 +170,10 @@ function median (arr) {
 //     str (string)
 //
 // Return true if that string exists in the array, otherwise false.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 function contains(arr, str) {
-  // YOUR CODE HERE
+  return arr.includes(str)
 }
 
 
@@ -147,7 +190,7 @@ function contains(arr, str) {
 //
 // Tip: Use Google to learn more about calculating the distance.
 function distance(point1, point2) {
-  // YOUR CODE HERE
+  return Math.sqrt((point1.x - point2.x) ** 2 + (point1.y - point2.y) ** 2)
 }
 
 
@@ -160,8 +203,10 @@ function distance(point1, point2) {
 // If there's a key in more than one object,
 // the latest object to have the key will determine the value. For example,
 // given {c: 3} and {c: 4}, then return {c: 4}.
+
+//See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 function combine(obj1, obj2) {
-  // YOUR CODE HERE
+  return Object.assign(obj1, obj2)
 }
 
 
@@ -170,8 +215,15 @@ function combine(obj1, obj2) {
 //
 // Return a new object where the keys and values of the argument are inverted.
 // For example, given { a: 1, b: 2 }, then return { '1': 'a', '2': 'b' }.
+
+//See https://stackoverflow.com/questions/23013573/swap-key-with-value-json
 function invert(obj) {
-  // YOUR CODE HERE
+  let result = {};
+  for (var key in obj) {
+    const value = obj[key];
+    result[value] = key;
+  }
+  return result
 }
 
 
