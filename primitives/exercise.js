@@ -4,16 +4,20 @@
 //
 // Return the sum of these two arguments
 function sum(a, b) {
-  // YOUR CODE HERE
+    var add = a+b;
+    return add ;
 }
+    
+
 
 // Define a function named product that takes two arguments
 //    a (number)
 //    b (number)
 //
 // Return the product of these two arguments
-function product(a, b) {
-  // YOUR CODE HERE
+function product(a,b) {
+  var multiply = a*b;
+    return (multiply);
 }
 
 // Define a function named sumAndProduct that takes three arguments
@@ -26,7 +30,8 @@ function product(a, b) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Grouping
 function sumAndProduct(x, y, z) {
-  // YOUR CODE HERE
+ var multiplyadd = z*(x+y);
+ return (multiplyadd);
 }
 
 // Define a function named roundUp that takes one argument
@@ -36,18 +41,23 @@ function sumAndProduct(x, y, z) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil
 function roundUp(decimal) {
-  // YOUR CODE HERE
+  var round1 = Math.ceil(decimal);
+  return (round1);
 }
 
 
 // Define a function named toFahrenheit that takes one argument
 //    celsius (number)
-//
+
 // Return the argument converted to Fahrenheit rounded to the nearest integer.
 // Use Google to find the formula.
 function toFahrenheit(celcius) {
-  // YOUR CODE HERE
+  var convertctof = Math.round(celcius *(9/5)+32);
+  return (convertctof);
 }
+
+  // YOUR CODE HERE
+
 
 // Define a function named areaOfCircle that takes one argument
 //    radius (number)
@@ -57,6 +67,8 @@ function toFahrenheit(celcius) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI
 function areaOfCircle(radius) {
+  var area = Math.PI * radius *radius;
+  return (area);
   // YOUR CODE HERE
 }
 
@@ -67,6 +79,8 @@ function areaOfCircle(radius) {
 // Return the area of a circular ring using these arguments. Use Google to find
 // the formula.
 function areaOfRing(outerRadius, innerRadius) {
+  var ringarea = Math.PI * ((outerRadius * outerRadius) -(innerRadius * innerRadius));
+  return (ringarea);
   // YOUR CODE HERE
 }
 
@@ -78,6 +92,7 @@ function areaOfRing(outerRadius, innerRadius) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Template_strings
 function greet(firstName, lastName) {
+  return ('Hello' + ', ' + firstName + ' ' + lastName + '!');
   // YOUR CODE HERE
 }
 
@@ -96,8 +111,15 @@ function greet(firstName, lastName) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#String_operators
 function toSentence(word1, word2, word3, oxfordComma) {
-  // YOUR CODE HERE
-}
+  if (oxfordComma ==1) {
+    greeting = word1 +', '+ word2 + ','+' and '+ word3 + '.';
+    } 
+  if(oxfordComma ==0 ) {
+    greeting = word1 +', '+ word2 +' and '+ word3 + '.';
+    }
+    return greeting; 
+  }
+  
 
 // Define a function named toRoman that takes one argument
 //    arabic (number)
@@ -111,7 +133,7 @@ function toSentence(word1, word2, word3, oxfordComma) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#switch_statement
 
-function toRoman(arabic) {
+
   // YOUR CODE HERE
 }
 
@@ -123,6 +145,10 @@ function toRoman(arabic) {
 //
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
 function toDolla(amount) {
+  currency = amount.toFixed(2);
+  currencyfinal = '$' + currency;
+  return currencyfinal;
+}
   // YOUR CODE HERE
 }
 
